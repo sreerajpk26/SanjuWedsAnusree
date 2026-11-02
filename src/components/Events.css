@@ -1,0 +1,135 @@
+.details {
+  background: var(--bg2);
+  padding: 56px 24px 56px;
+  border-bottom: 1px solid var(--rule);
+}
+.event-card {
+  background: #fff;
+  border: 1px solid var(--cardborder);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  padding: 22px 18px 18px;
+  margin: 0 auto 14px;
+  max-width: 520px;
+}
+.event-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 13px;
+  margin-bottom: 13px;
+  border-bottom: 1px dashed rgba(163, 129, 47, 0.25);
+}
+.event-title {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.32em;
+  font-size: 10.5px;
+  color: var(--gold);
+  font-weight: 500;
+}
+.event-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 9px 0;
+}
+.row-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(15, 61, 46, 0.06);
+  border: 1px solid rgba(15, 61, 46, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--green);
+}
+.row-icon svg {
+  width: 15px;
+  height: 15px;
+}
+.row-body {
+  flex: 1;
+  min-width: 0;
+}
+.row-label {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.25em;
+  font-size: 8.5px;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+.row-value {
+  font-family: 'Italiana', serif;
+  font-size: 18px;
+  color: var(--ink);
+  line-height: 1.25;
+}
+.row-sub {
+  font-size: 16.5px;
+  font-weight: 600;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 1px;
+}
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 2px;
+}
+.contact-link {
+  font-family: 'Italiana', serif;
+  font-size: 18px;
+  color: var(--ink);
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+.contact-link:hover {
+  color: var(--gold);
+}
+.event-note {
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(163, 129, 47, 0.25);
+  text-align: center;
+  font-style: italic;
+  font-size: 16.5px;
+  color: var(--muted);
+}
+.event-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 13px;
+  flex-wrap: wrap;
+}
+.btn {
+  flex: 1;
+  min-width: 110px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 11px;
+  border-radius: 3px;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.18em;
+  font-size: 9.5px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+.btn-primary {
+  background: var(--green);
+  color: #f7f2e7;
+}
+.btn-primary:hover {
+  background: var(--green2);
+}
+.btn svg {
+  width: 11px;
+  height: 11px;
+}
