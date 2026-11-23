@@ -1,21 +1,16 @@
 import { useCallback, useState } from 'react';
 import Landing from './components/Landing';
-import Invite from './components/Invite';
-import Countdown from './components/Countdown';
-import Portrait from './components/Portrait';
-import Events from './components/Events';
 import Verse from './components/Verse';
 import Families from './components/Families';
 import Wishes from './components/Wishes';
-import MonogramBadge from './components/MonogramBadge';
 import MusicControl from './components/MusicControl';
 import Toast from './components/Toast';
 import { useReveal } from './hooks/useReveal';
 
 export default function App() {
-  const [opened, setOpened] = useState(false);
+  const [heard, setHeard] = useState(false);
   const [toast, setToast] = useState('');
-  const mainRef = useReveal(opened);
+  const mainRef = useReveal(true);
 
   const showToast = useCallback((msg) => {
     setToast(msg);
@@ -23,26 +18,13 @@ export default function App() {
 
   return (
     <>
-      <div className="travel-dots" aria-hidden="true">
-        {Array.from({ length: 8 }).map((_, i) => (
-          <div className="travel-dot" key={i} />
-        ))}
-      </div>
-
-      <MonogramBadge visible={opened} />
-      <MusicControl active={opened} />
-      <Landing opened={opened} onOpen={() => setOpened(true)} />
-
-      <div ref={mainRef} className={`main ${opened ? 'show' : ''}`}>
-        <Portrait />
-        <Invite />
-        <Countdown />
-        <Events />
-        <Verse />
+      <MusicControl active={heard} />
+      <div ref={mainRef} className="main">
+        <Landing onEnter={() => setHeard(true)} />
         <Families />
-        <Wishes opened={opened} showToast={showToast} />
+        <Verse />
+        <Wishes opened showToast={showToast} />
       </div>
-
       <Toast message={toast} onDone={() => setToast('')} />
     </>
   );

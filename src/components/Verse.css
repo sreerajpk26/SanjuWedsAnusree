@@ -1,28 +1,68 @@
-.verse-section {
-  background: var(--bg);
-  padding: 64px 28px;
-  text-align: center;
-  border-bottom: 1px solid var(--rule);
+.words {
+  padding: 8px 18px 12px;
 }
-.verse-sanskrit {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(18px, 4.5vw, 24px);
-  color: var(--ink);
-  line-height: 2;
-  margin: 0 auto 20px;
-  max-width: 36ch;
+
+.words-inner {
+  margin: 0 auto;
 }
-.verse-en {
+
+.shloka {
+  margin-top: 28px;
+  padding: 26px 16px 22px;
+  background: #641824;
+  color: #fbf6ee;
+}
+
+.shloka .lotus-line {
+  stroke: #e7c98a;
+}
+
+.shloka .lotus-flower {
+  fill: #e7c98a;
+}
+
+.shloka .lotus-flower circle {
+  fill: #641824;
+}
+
+.words-sanskrit {
+  font-family: 'Tiro Devanagari Sanskrit', serif;
+  font-size: 20px;
+  line-height: 1.7;
+  color: #f3e0b0;
+}
+
+.words-sanskrit span {
+  display: block;
+}
+
+.shloka p:not(.words-sanskrit) {
+  margin-top: 12px;
+  color: rgba(251, 246, 238, 0.82);
+}
+
+.shloka cite {
+  display: block;
+  margin-top: 14px;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e7c98a;
+}
+
+.words-lead {
+  margin-top: 26px;
+  font-family: 'Fraunces', serif;
   font-style: italic;
-  font-size: 18px;
-  color: var(--muted);
-  max-width: 42ch;
-  margin: 0 auto 14px;
-  line-height: 1.85;
+  font-weight: 560;
+  font-size: clamp(24px, 5vw, 32px);
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  color: var(--ink);
 }
-.verse-ref {
-  font-family: 'Cinzel', serif;
-  font-size: 9px;
-  letter-spacing: 0.35em;
-  color: var(--gold);
+
+.words-next {
+  margin-top: 10px;
+  color: var(--muted);
 }

@@ -4,16 +4,14 @@ import './Portrait.css';
 export default function Portrait() {
   return (
     <section className="portrait">
-      <div className="reveal">
-        <div className="portrait-arch">
-          <div className="portrait-photo">
-            <img
-              src={import.meta.env.BASE_URL + COUPLE_PHOTO}
-              alt={`${WEDDING.groomShort} & ${WEDDING.brideShort}`}
-            />
-          </div>
-        </div>
-        <div className="portrait-caption">Two hearts, one journey</div>
+      <div className="reveal portrait-arch">
+        <img
+          src={import.meta.env.BASE_URL + COUPLE_PHOTO}
+          alt={`${WEDDING.groomFull} and ${WEDDING.brideFull}`}
+        />
+        <p className="portrait-names">
+          {WEDDING.groomShort} <em>&amp;</em> {WEDDING.brideShort}
+        </p>
       </div>
     </section>
   );

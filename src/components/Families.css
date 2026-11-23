@@ -1,62 +1,45 @@
-.families {
-  background: var(--bg2);
-  padding: 76px 24px 66px;
-  text-align: center;
-  border-bottom: 1px solid var(--rule);
+.houses {
+  padding: 36px 18px 8px;
 }
-.family-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 28px;
-  max-width: 480px;
+
+.houses-inner {
+  width: min(760px, 100%);
   margin: 0 auto;
 }
-@media (min-width: 640px) {
-  .family-grid {
-    grid-template-columns: 1fr 1fr;
-    max-width: 720px;
-  }
-}
-.family-card {
-  background: #fff;
-  border: 1px solid var(--cardborder);
-  border-radius: 16px;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
-  padding: 28px 22px;
-  text-align: center;
-}
-.family-side {
-  font-family: 'Cinzel', serif;
-  letter-spacing: 0.32em;
-  font-size: 9px;
-  color: var(--gold);
-  margin-bottom: 14px;
-}
-.family-name {
-  font-family: 'Italiana', serif;
-  font-size: 26px;
-  color: var(--ink);
-  margin-bottom: 18px;
-}
-.family-detail {
-  font-size: 16.5px;
-  color: var(--muted);
+
+.houses-lead {
+  font-family: 'Fraunces', serif;
   font-style: italic;
-  line-height: 1.85;
+  font-weight: 560;
+  font-size: clamp(26px, 5vw, 34px);
+  letter-spacing: -0.03em;
 }
-.family-detail strong {
-  font-family: 'Cinzel', serif;
-  font-style: normal;
-  font-size: 8px;
-  letter-spacing: 0.28em;
-  color: var(--gold);
-  display: block;
-  margin: 14px 0 4px;
+
+.house-grid {
+  display: grid;
+  gap: 32px;
+  margin-top: 28px;
+}
+
+.house-grid h2 {
+  font-family: 'Fraunces', serif;
   font-weight: 500;
+  font-size: 32px;
+  letter-spacing: -0.03em;
 }
-.family-diamond {
-  color: var(--gold);
-  opacity: 0.45;
-  margin: 10px 0;
-  font-size: 12px;
+
+.house-grid p {
+  margin-top: 6px;
+  color: var(--muted);
+}
+
+.house-home {
+  color: var(--ink) !important;
+}
+
+@media (min-width: 720px) {
+  .house-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
 }

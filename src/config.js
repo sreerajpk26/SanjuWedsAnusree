@@ -24,11 +24,11 @@ export const EVENTS = [
 
 // Contact numbers shown on the invitation (Indian mobile).
 export const CONTACTS = [
-  { label: '94957 28020', tel: '+919495728020' },
+  { label: '97467 47092', tel: '+919746747092' },
 ];
 
 // Shown inside the event card, as on the printed invitation.
-export const EVENT_NOTE = 'Presence in blessings only';
+export const EVENT_NOTE = 'Presents in blessings only';
 
 export const FAMILIES = [
   {
@@ -52,11 +52,16 @@ export const FAMILIES = [
 // Link previews use public/photos/share.jpg instead (see index.html).
 export const COUPLE_PHOTO = 'photos/couple.jpg';
 
+export const BLESSINGS = [
+  'Let this morning be gentle with them.',
+  'Let the people who love them arrive with full hands, and let the spring they begin here outlast the season.',
+];
+
 export const VERSE = {
   sanskrit: 'समानी व आकूतिः समाना हृदयानि वः । समानमस्तु वो मनो यथा वः सुसहासति ॥',
   english:
-    '"United be your purpose, harmonious your hearts, united your minds — so that you may live together in accord."',
-  reference: '— RIG VEDA 10.191.4',
+    'United be your purpose, harmonious your hearts, united your minds — so that you may live together in accord.',
+  reference: 'Rig Veda 10.191.4',
 };
 
 // Realtime Database path for this couple

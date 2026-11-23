@@ -4,32 +4,12 @@ import './Invite.css';
 export default function Invite() {
   return (
     <section className="invite">
-      <div className="reveal">
-        <div className="invite-blessing">WITH THE DIVINE BLESSINGS</div>
-        <h2 className="invite-names">
-          {WEDDING.groomShort}
-          <span className="amp">&amp;</span>
-          {WEDDING.brideShort}
-        </h2>
-        <div className="invite-date">{WEDDING.dateLabel}</div>
-        <div className="section-eyebrow">— YOU ARE CORDIALLY INVITED —</div>
-        <div className="invite-body">
-          <p>We joyfully announce the wedding of</p>
-          <p>
-            <span className="accent">
-              {WEDDING.groomFull} &amp; {WEDDING.brideFull}
-            </span>
-          </p>
-          <p>
-            and cordially invite your esteemed presence on this auspicious occasion.
-          </p>
-        </div>
-        <div className="stars">✦ ✦ ✦</div>
-        <div className="divider">
-          <span />
-          <div className="dot" />
-          <span />
-        </div>
+      <div className="reveal panel">
+        <p className="kicker">With their families’ blessings</p>
+        <p>
+          {WEDDING.groomFull} and {WEDDING.brideFull} request the pleasure of your presence as they
+          begin their life together.
+        </p>
       </div>
     </section>
   );

@@ -22,51 +22,58 @@ export default function Wishes({ opened, showToast }) {
     await submit(n, m);
     setName('');
     setMsg('');
-    showToast('Wish sent! ✦');
+    showToast('Wish sent');
   };
 
   const count = wishes.length;
 
   return (
-    <section className="wishes">
-      <div className="reveal">
-        <div className="section-eyebrow center">WISHES</div>
-        <h2 className="section-title center">Send Your Blessings</h2>
-        <div className="wish-count">
-          ✨ {count} blessing{count === 1 ? '' : 's'} received
-        </div>
-        <div className="wish-form">
-          <input
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Your name"
-            autoComplete="name"
-          />
-          <textarea
-            value={msg}
-            onChange={(e) => setMsg(e.target.value)}
-            placeholder={`Write a blessing or warm wish for ${WEDDING.groomShort} & ${WEDDING.brideShort}…`}
-          />
-          <button className="wfl-submit" onClick={handleSubmit} disabled={sending}>
-            {sending ? 'SENDING…' : 'SEND WISHES ✦'}
-          </button>
-        </div>
-        <div className="wish-grid">
-          {wishes.slice(0, visibleCount).map((w) => (
-            <div className="wish-card" key={w.key}>
-              <div className="wish-card-name">{w.name}</div>
-              <div className="wish-card-msg">{w.msg}</div>
-              <div className="wish-card-time">{w.time || ''}</div>
-            </div>
-          ))}
-        </div>
-        {visibleCount < wishes.length && (
-          <div className="loadmore-wrap">
-            <button className="loadmore-btn" onClick={loadMore}>
-              LOAD MORE WISHES
+    <section className="notes" id="wishes">
+      <div className="reveal wrap notes-grid">
+        <div>
+          <h2>Leave a wish</h2>
+          <p className="notes-count">
+            {count === 0 ? 'Be the first to write.' : `${count} ${count === 1 ? 'note' : 'notes'} so far`}
+          </p>
+          <form
+            className="notes-form"
+            onSubmit={(event) => {
+              event.preventDefault();
+              handleSubmit();
+            }}
+          >
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Your name"
+              autoComplete="name"
+              aria-label="Your name"
+            />
+            <textarea
+              value={msg}
+              onChange={(e) => setMsg(e.target.value)}
+              placeholder={`A wish for ${WEDDING.groomShort} & ${WEDDING.brideShort}`}
+              aria-label={`A wish for ${WEDDING.groomShort} and ${WEDDING.brideShort}`}
+            />
+            <button type="submit" disabled={sending}>
+              {sending ? 'Sending…' : 'Send wish'}
             </button>
-          </div>
-        )}
+          </form>
+        </div>
+        <div className="notes-list">
+          {wishes.slice(0, visibleCount).map((wish) => (
+            <article key={wish.key}>
+              <p className="note-name">{wish.name}</p>
+              <p>{wish.msg}</p>
+              {wish.time && <p className="note-time">{wish.time}</p>}
+            </article>
+          ))}
+          {visibleCount < wishes.length && (
+            <button type="button" className="notes-more" onClick={loadMore}>
+              Show more
+            </button>
+          )}
+        </div>
       </div>
     </section>
   );

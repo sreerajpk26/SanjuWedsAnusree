@@ -3,33 +3,23 @@ import { WEDDING } from '../config';
 import './Countdown.css';
 
 const UNITS = [
-  ['days', 'DAYS'],
-  ['hours', 'HOURS'],
-  ['mins', 'MINS'],
-  ['secs', 'SECS'],
+  ['days', 'Days'],
+  ['hours', 'Hours'],
+  ['mins', 'Minutes'],
+  ['secs', 'Seconds'],
 ];
 
 export default function Countdown() {
   const parts = useCountdown(WEDDING.dateTime);
 
   return (
-    <section className="countdown">
-      <div className="reveal">
-        <div className="cd-label">The Celebration of Love Begins In</div>
-        <div className="cd-grid">
-          {UNITS.map(([key, label], i) => (
-            <span key={key} className="cd-item">
-              {i > 0 && <span className="cd-sep">·</span>}
-              <span className="cd-unit">
-                <span className="cd-num" key={parts[key]}>
-                  {parts[key]}
-                </span>
-                <span className="cd-txt">{label}</span>
-              </span>
-            </span>
-          ))}
+    <div className="count" aria-label="Time until the muhurtham">
+      {UNITS.map(([key, label]) => (
+        <div key={key}>
+          <span className="count-num">{parts[key]}</span>
+          <span className="count-label">{label}</span>
         </div>
-      </div>
-    </section>
+      ))}
+    </div>
   );
 }
